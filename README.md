@@ -27,5 +27,14 @@ id	手机号码 网络ip 上行流量 下行流量 网络状态码
 附加需求：
 降序排列；通过手机号前三位数字对其所在省份进行分区
 
-### 代码实现
+### fs.jar----------------------------------代码实现
+两次MapReduce：
+第一次：Flowsum
+实现上行流量、下行流量、总流量的统计
+第二次：FlowCountSort
+实现排序与所在省份进行分区
+
+### Hadoop环境运行命令
+hadoop jar fs.jar com.atticus.mr.flowsum.FlowsumDriver /inputflow/ /output1
+hadoop jar fs.jar com.atticus.mr.flowsort.FlowCountSortDriver /output1 /output2
 
